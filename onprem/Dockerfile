@@ -9,5 +9,5 @@ RUN dotnet publish -f netcoreapp3.1 -c Release
 
 FROM mcr.microsoft.com/dotnet/core/runtime:3.1 AS runtime
 WORKDIR DataLoader
-COPY --from=build azure-stream-analytics-data-pipeline/onprem/DataLoader/bin/Release/netcoreapp2.0/publish .
+COPY --from=build azure-stream-analytics-data-pipeline/onprem/DataLoader/bin/Release/netcoreapp3.1/publish .
 ENTRYPOINT ["dotnet" , "taxi.dll"]
